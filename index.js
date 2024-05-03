@@ -28,14 +28,14 @@ app.use( express.static( publicPath ) );
 
 //Rutas
 app.use( '/api/login', require('./routes/auth') );
+app.use( '/api/usuarios', require('./routes/usuarios') );
+app.use( '/api/mensjaes', require('./routes/mensajes') );
 
 
-server.listen( process.env.PORT, ( err ) => {
+server.listen( process.env.PORT, (err)=> {
+    if (err) throw new Error(err);
 
-    if ( err ) throw new Error(err);
-
-    console.log('Servidor corriendo en puerto', process.env.PORT );
-
+    console.log('Servidor Corriendo puerto', process.env.PORT);
 });
 
 
